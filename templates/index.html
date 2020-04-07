@@ -1,0 +1,135 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+    .register {
+        background: -webkit-linear-gradient(#3931af, #00c6ff);
+        padding: 3%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .register-left {
+        text-align: center;
+        color: #fff;
+        margin-top: 4%;
+    }
+    
+    .register-left input {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        width: 60%;
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #383d41;
+        margin-top: 30%;
+        margin-bottom: 3%;
+        cursor: pointer;
+    }
+    
+    .register-right {
+        background: #f8f9fa;
+        margin-top: 35px;
+        border-top-left-radius: 10% 50%;
+        border-bottom-left-radius: 10% 50%;
+    }
+    
+    .register-left p {
+        font-weight: lighter;
+        padding: 12%;
+        margin-top: -9%;
+    }
+    
+    .register .register-form {
+        padding: 10%;
+        margin-top: 10%;
+    }
+    
+    .btnRegister {
+        float: left;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        background: #0062cc;
+        color: #fff;
+        font-weight: 600;
+        width: 50%;
+        cursor: pointer;
+    }
+    
+    .register-heading {
+        text-align: center;
+        margin-top: 8%;
+        margin-bottom: -15%;
+        color: #495057;
+    }
+</style>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">COVID-19 Detector</h3>
+                    <form action="/" method="POST">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="age" id="age" type="text" class="form-control" placeholder="Enter age" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="fatigue" id="fatigue">
+                                    <option  class="hidden" selected disabled>Do you have Fatigue</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="diff_breating" id="diff_breating">
+                                    <option class="hidden"  selected disabled>Do you have difficulty in breathing?</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                </div>
+                                <br>
+                                <h6>Patient Status: {{status}}</h6>
+                                <h6>Patient probability score: {{prob}}</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="fever" id="fever" type="text" class="form-control" placeholder="Enter Fever" value="" />
+                                </div>
+                                <!-- <div class="form-group">
+                                <select class="form-control">
+                                    <option class="hidden"  selected disabled>Do you have dry cough?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div> -->
+                                <!-- <div class="form-group">
+                                <select class="form-control">
+                                    <option class="hidden"  selected disabled>Do you have sour throat?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div> -->
+                                <div class="form-group">
+                                    <select class="form-control" name="runny_nose" id="runny_nose">
+                                    <option  class="hidden"  selected disabled>Do you have runny nose?</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                </div>
+                                <input type="submit" class="btnRegister" value="Submit" />
+                    </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
