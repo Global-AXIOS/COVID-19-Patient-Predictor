@@ -1,6 +1,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!------ Include the above in your HEAD tag ---------->
 <style>
     .register {
@@ -14,19 +16,6 @@
         text-align: center;
         color: #fff;
         margin-top: 4%;
-    }
-    
-    .register-left input {
-        border: none;
-        border-radius: 1.5rem;
-        padding: 2%;
-        width: 60%;
-        background: #f8f9fa;
-        font-weight: bold;
-        color: #383d41;
-        margin-top: 30%;
-        margin-bottom: 3%;
-        cursor: pointer;
     }
     
     .register-right {
@@ -66,70 +55,99 @@
         color: #495057;
     }
 </style>
+
+<script>
+    function validateForm() {
+        var x = document.forms["myform"]["age"].value;
+        if (x < 0) {
+            alert("Please fill Age from Range 0-100");
+        } else if (x > 100) {
+            alert("Please fill Age from Range 0-100");
+        }
+        var y = document.forms["myform"]["fever"].value;
+        if (y < 98) {
+            alert("Please fill Fever from Range 98-102");
+        } else if (x > 102) {
+            alert("Please fill Fever from Range 98-102");
+        }
+        if (document.myform.fatigue.selectedIndex == "") {
+            alert("Please Select option From Fatigue!");
+            return false;
+        }
+        if (document.myform.diff_breating.selectedIndex == "") {
+            alert("Please Select Option from Difficulty in breathing!");
+            return false;
+        }
+        if (document.myform.runny_nose.selectedIndex == "") {
+            alert("Please Select Option from Runny Nose");
+            return false;
+        }
+    }
+</script>
+
+
 <div class="container register">
     <div class="row">
         <div class="col-md-3 register-left">
-
         </div>
         <div class="col-md-9 register-right">
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">COVID-19 Detector</h3>
-                    <form action="/" method="POST">
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input name="age" id="age" type="text" class="form-control" placeholder="Enter age" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control" name="fatigue" id="fatigue">
-                                    <option  class="hidden" selected disabled>Do you have Fatigue</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control" name="diff_breating" id="diff_breating">
-                                    <option class="hidden"  selected disabled>Do you have difficulty in breathing?</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                </div>
-                                <br>
-                                <h6>Patient Status: {{status}}</h6>
-                                <h6>Patient probability score: {{prob}}</h6>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input name="fever" id="fever" type="text" class="form-control" placeholder="Enter Fever" value="" />
-                                </div>
-                                <!-- <div class="form-group">
-                                <select class="form-control">
-                                    <option class="hidden"  selected disabled>Do you have dry cough?</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div> -->
-                                <!-- <div class="form-group">
-                                <select class="form-control">
-                                    <option class="hidden"  selected disabled>Do you have sour throat?</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div> -->
-                                <div class="form-group">
-                                    <select class="form-control" name="runny_nose" id="runny_nose">
-                                    <option  class="hidden"  selected disabled>Do you have runny nose?</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                </div>
-                                <input type="submit" class="btnRegister" value="Submit" />
-                    </form>
+            <h3 class="register-heading">COVID-19 Detector</h3>
+            <form name="myform" action="/" method="POST" onsubmit="return validateForm()">
+                <div class="row register-form">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input name="age" id="age" type="text" class="form-control" placeholder="Enter age" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input name="fever" id="fever" type="text" class="form-control" placeholder="Enter Fever" value="" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="diff_breating" id="diff_breating">
+                            <option class="hidden"  selected disabled>Do you have difficulty in breathing?</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        </div>
+
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select class="form-control" name="fatigue" id="fatigue" required="required">
+                            <option  class="hidden" selected disabled>Do you have Fatigue</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        </div>
+                        <!-- <div class="form-group">
+                        <select class="form-control">
+                            <option class="hidden"  selected disabled>Do you have dry cough?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div> -->
+                        <!-- <div class="form-group">
+                        <select class="form-control">
+                            <option class="hidden"  selected disabled>Do you have sour throat?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div> -->
+                        <div class="form-group">
+                            <select class="form-control" name="runny_nose" id="runny_nose">
+                            <option  class="hidden"  selected disabled>Do you have runny nose?</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        </div>
+                        <input type="submit" class="btnRegister" value="Submit" />
                     </div>
-                </div>
+                    <div class="col-md-6">
+                        <br>
+                        <h6>Patient Status: {{status}}</h6>
+                        <h6>Patient probability score: {{prob}}</h6>
+                    </div>
+            </form>
             </div>
         </div>
     </div>
-</div>

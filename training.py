@@ -10,7 +10,7 @@ def data_split(data,ratio):
     return data.iloc[train_indices],data.iloc[test_indices]
 
 if __name__ == "__main__":
-    df=pd.read_csv("H:\\IDP-6months\\Machine Learning\\Coronavirus_predictor\\Flask Web App\\accuracy_check1.csv")
+    df=pd.read_csv("Symptoms_Data.csv")
     train,test=data_split(df,0.2)
     X_train=train[["Age","Fever","Fatigue","Runny_Nose","Difficulty_in_breath"]].to_numpy()
     X_test=test[["Age","Fever","Fatigue","Runny_Nose","Difficulty_in_breath"]].to_numpy()
