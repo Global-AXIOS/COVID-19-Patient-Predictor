@@ -7,8 +7,13 @@ It can also help prioritise the patients who really have Coronavirius and help t
 ## Home Page
 ![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/blob/master/images/image1.png)
 
-<br>
 ## Patient Prediction
-<br>
 
-![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/images/blob/master/image2.png)
+![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/blob/master/images/image2.png)
+
+## Home Page
+![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/blob/master/images/image3.png)
+
+## Patient Prediction
+
+![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/blob/master/images/image4.png)
