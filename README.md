@@ -5,7 +5,7 @@ Machine learning model which predicts if a person can have probability or not of
 It can also help prioritise the patients who really have Coronavirius and help the health care workers who really have it and save kits for the needed.
 
 ## Home Page
-![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/images/blob/master/image1.png)
+![alt text](https://github.com/anujdev11/COVID-19-Patient-Predictor-/blob/master/images/image1.png)
 
 <br>
 ## Patient Prediction
