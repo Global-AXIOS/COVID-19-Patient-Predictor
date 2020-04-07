@@ -1,1 +1,1 @@
-# COVID-19-Patient-Predictor-
+# COVID-19-Patient-Predictor
